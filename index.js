@@ -36,14 +36,7 @@ app.use(cookieParser())
 //use post method
 app.use(express.urlencoded({extended:false}))
 
-//connect MogoDB
-//const dbUrl = 'mongodb://127.0.0.1:27017/PTNDB'
-// const dbUrl = 'mongodb+srv://soulixaivls:BntlIFQ2PJp1X525@cluster0.k3ovqg3.mongodb.net/?retryWrites=true&w=majority'
-// mongoose.connect(dbUrl,{
-//     useNewUrlParser:true,
-//     useUnifiedTopology:true
-// }).then(console.log("connect database"))
-// .catch(err=>console.log(err))
+
 
 
 let port = process.env.PORT || 3000;
