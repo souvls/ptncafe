@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Lao&display=swap');
+
+body{
+    font-family: 'Noto Sans Lao', sans-serif;
+    
+}
+#block1{
+    height: 45vh;
+    background-image: url("../images/icon/backgound.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#block2{
+    height: auto;
+    background-image: url("../images/icon/background1.jpg");
+    background-size: cover;
+}
+#block3{
+    height: auto;
+    background-size: cover;
+}
+.head-menu{
+    width: 80vw;
+    background-color: gold;
+    border-bottom-right-radius:100% ;
+}
+.menu-area table{
+    color: gold;
+    font-size: 20px;
+}
+footer{
+    background-color: gray;
+}

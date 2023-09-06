@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./images/icon/Asset 1.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./css/css.css">
+    <title><%= x %></title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <p class="fs-1 mt-2">admin Funtion</p>
+        <hr>
+        <div class="d-block text-center">
+            <div class="row m-3">
+                <a class="btn btn-info " href="/"><i class="fa-solid fa-home"></i> &nbsp; ໜ້າຫຼັກ</a>
+            </div>
+            <div class="row m-3">
+                <a class="btn btn-primary " href="/adminManage"><i class="fa-solid fa-list-check"></i> &nbsp; ລາຍການສິນຄ້າ</a>
+            </div>
+            <div class="row m-3">
+                <a class="btn btn-success " href="/adminAdd"><i class="fa-solid fa-plus"></i> &nbsp; ເພີ່ມສິນຄ້າ</a>
+            </div>
+            <div class="row m-3 mt-5">
+                <a class="btn btn-danger " href="/logout" onclick="return confirm('ອອກຈາກລະບົບ')"><i class="fa-solid fa-right-from-bracket"></i> &nbsp; ອອກຈາກລະບົບ</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (() => {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            const forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./images/icon/Asset 1.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./css/css.css">
+    <title>add Product</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <p class="fs-1 mt-2">ລາຍການສິນຄ້າ</p>
+        <form class="row g-3" novalidate>
+            <div class="col-md-3">
+                <input type="text" class="form-control">
+            </div>
+            <div class="col-md-3">
+                <button class="btn btn-success" type="submit">ຄົ້ນຫາ</button>
+            </div>
+        </form>
+        <hr>
+        <table class="table table-success table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">ຊື່ສິນຄ້າ</th>
+                    <th scope="col">ລາຄາ</th>
+                    <th scope="col">ໜ່ວຍເອີ້ນ</th>
+                    <th scope="col"> </th>
+                    <th scope="col"> </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>
+                        <a class="btn btn-primary" href="#" role="button">ແກ້ໄຂ</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-danger" href="#" role="button">ລົບ</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (() => {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            const forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+    </script>
+</body>
+
+</html>

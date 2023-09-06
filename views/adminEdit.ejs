@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./images/icon/Asset 1.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./css/css.css">
+    <title>
+        <%= x %>
+    </title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <p class="fs-1 mt-2">ແກ້ໄຂສິນຄ້າ</p>
+        <hr>
+        <form class="row g-3 needs-validation" novalidate method="post" action="/edit"
+            onsubmit="return confirm('ຢືນຢັນການອັບເດດ')">
+            <div class="col-md-4">
+                <label class="form-label">ລະຫັດສິນຄ້າ</label><br>
+                <input type="text" class="form-control" id="validationCustom01" value="<%= product._id %>" name="_id"
+                    readonly>
+            </div>
+            <div class="col-md-4">
+                <label for="validationCustom01" class="form-label">ຊື່ສິນຄ້າ</label>
+                <input type="text" class="form-control" id="validationCustom01" value="<%= product.name %>" name="name"
+                    required>
+                <div class="invalid-feedback">
+                    ໃສ່ຊື່ສິນຄ້າ
+                </div>
+            </div>
+            <div class="col-md-4">
+                <label for="validationCustom02" class="form-label">ລາຄາ</label>
+                <input type="number" class="form-control" id="validationCustom02" value="<%= product.price %>"
+                    name="price" required>
+                <div class="invalid-feedback">
+                    ໃສ່ລາຄາ
+                </div>
+            </div>
+            <div class="col-md-3">
+                <label for="validationCustom04" class="form-label">ໜ່ວຍເອີ້ນ</label>
+                <select class="form-select" id="validationCustom04" name="unit" required>
+                    <option selected value="<%= product.unit %>">
+                        <%= product.unit %>
+                    </option>
+                    <option value="ຈານ">ຈານ</option>
+                    <option value="ຖາດ">ຖາດ</option>
+                    <option value="ຊຸດ">ຊຸດ</option>
+                    <option value="ຖ້ວຍ">ຖ້ວຍ</option>
+                    <option value="ຈອກ">ຈອກ</option>
+                </select>
+                <div class="invalid-feedback">
+                    ເລືອກ
+                </div>
+            </div>
+            <div class="col-md-3">
+                <label for="validationCustom05" class="form-label">ປະເພດ</label>
+                <select class="form-select" id="validationCustom05" name="type" required>
+                    <option selected value="<%= product.type %>">
+                        <% if(product.type==="food" ){ %>
+                            ອາຫານ
+                            <% }else{ %>
+                                ເຄື່ອງດື່ມ
+                                <% } %>
+                    </option>
+                    <option value="food">ອາຫານ</option>
+                    <option value="drinks">ເຄື່ອງດື່ມ</option>
+                </select>
+                <div class="invalid-feedback">
+                    ເລືອກ
+                </div>
+            </div>
+            <div class="col-md-3">
+                <label for="validationCustom04" class="form-label">ສະຖານະ</label>
+                <select class="form-select" id="validationCustom04" name="status" required>
+                    <option selected value="<%= product.status %>">
+                        <% if(product.statuse===1){ %>
+                            ຍັງ
+                            <% }else{ %>
+                                ເບິດ
+                                <% } %>
+                    </option>
+                    <option value="1">ຍັງ</option>
+                    <option value="0">ເບິດ</option>
+                </select>
+                <div class="invalid-feedback">
+                    ເລືອກ
+                </div>
+            </div>
+            <button class="btn btn-primary" type="submit">ອັບເດດ</button>
+        </form>
+        <br>
+        <div class="row justify-content-around">
+            <div class="col-4">
+                <a class="btn btn-warning " href="/adminManage"><i class="fa-solid fa-arrow-left"></i> &nbsp; ກັບຄືນ</a>
+            </div>
+            <div class="col-4">
+                <a class="btn btn-danger" href="/delete?id=<%= product.id %>"
+                    onclick="return confirm('ຢືນຢັນລົບ <%= product.name %> ບໍ?')"><i class="fa-solid fa-trash-can"></i>
+                    &nbsp; ລົບ</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (() => {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            const forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+    </script>
+</body>
+
+</html>
