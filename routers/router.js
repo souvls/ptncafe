@@ -11,7 +11,7 @@ const User = require('../models/user.js')
 //router home
 router.get("/",async (req,res)=>{
     //doc product form database
-    await Product.find({}).then(product =>{
+    await Product.find({}).sort({ name: 1 }).then(product =>{
         res.render('index',{product})
     })
 })

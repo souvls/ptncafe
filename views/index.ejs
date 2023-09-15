@@ -29,7 +29,7 @@
     </div>
     <div id="block2" class="d-block position-relative">
         <div class="group-menu mb-3">
-            <div class="head-menu p-1">
+            <div class="head-menu ps-3">
                 <div class="container-fluid">
                     <i class="fa-solid fa-burger fs-3"></i>
                     <span class="fs-3">ເມນູອາຫານ</span>
@@ -37,7 +37,7 @@
                 </div>
             </div>
             <!-- display food menu -->
-            <div class="menu-area mt-2">
+            <div class="menu-area mt-2 p-2">
                 <div class="container-fluid">
                     <table style="width: 100%;">
                         <% if(product.length > 0){ %>
@@ -73,7 +73,7 @@
                     <span class="fs-3">ເມນູເຄື່ອງດື່ມ</span>
                 </div>
             </div>
-            <div class="menu-area mt-2">
+            <div class="menu-area mt-2 ps-2">
                 <div class="container-fluid">
                     <table style="width: 100%;">
                         <% if(product.length > 0){ %>
@@ -100,6 +100,140 @@
                 </div>
             </div>
         </div>
+        <hr class="text-danger">
+        <div class="row align-items-start">
+            <div class="col">
+                <div class="bg-warning">
+                    <div class="container-fluid">
+                        <i class="fa-solid fa-burger fs-3"></i>
+                        <span class="fs-3">ເມນູອາຫານ</span>
+                    </div>
+                    <div class="container-fluid">
+                        <table style="width: 100%;">
+                            <% if(product.length > 0){ %>
+                                <% for(let i=0; i < product.length; i++){ %>
+    
+                                    <!--display food menu status = 1 -->
+                                    <% if(product[i].type == 'food' && product[i].status == 1){ %>
+                                        <tr>
+                                            <td><%= product[i].name %></td>
+                                            <td><%= new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 3 }).format(product[i].price) %></td>
+                                        </tr>
+                                    <% } %>
+                                    <!--display food menu status = 0 -->
+                                    <% if(product[i].type == 'food' && product[i].status == 0){ %>
+                                        <tr>
+                                            <td class="text-danger"><%= product[i].name %></td>
+                                            <td class="text-danger"><%= new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 3 }).format(product[i].price) %></td>
+                                        </tr>
+                                    <% } %>
+                                <% } %>
+                            <% } %>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="bg-warning">
+                    <div class="container-fluid">
+                        <i class="fa-solid fa-burger fs-3"></i>
+                        <span class="fs-3">ເມນູອາຫານ</span>
+                    </div>
+                    <div class="container-fluid">
+                        <table style="width: 100%;">
+                            <% if(product.length > 0){ %>
+                                <% for(let i=0; i < product.length; i++){ %>
+    
+                                    <!--display drink menu status = 1 -->
+                                    <% if(product[i].type == 'drinks' && product[i].status == 1){ %>
+                                        <tr>
+                                            <td><%= product[i].name %></td>
+                                            <td><%= new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 3 }).format(product[i].price) %></td>
+                                        </tr>
+                                    <% } %>
+                                    <!--display drinks menu status = 0 -->
+                                    <% if(product[i].type == 'drinks' && product[i].status == 0){ %>
+                                        <tr>
+                                            <td class="text-danger"><%= product[i].name %></td>
+                                            <td class="text-danger"><%= new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 3 }).format(product[i].price) %></td>
+                                        </tr>
+                                    <% } %>
+                                <% } %>
+                            <% } %>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <hr class="text-danger">
+        <div class="row align-items-start">
+            <div class="col">
+                <div class="">
+                    <div class="container-fluid bg-warning">
+                        <i class="fa-solid fa-burger fs-3"></i>
+                        <span class="fs-3">ເມນູອາຫານ</span>
+                    </div>
+                    <br>
+                    <div class="container-fluid">
+                        <table style="width: 100%;color: gold;">
+                            <% if(product.length > 0){ %>
+                                <% for(let i=0; i < product.length; i++){ %>
+    
+                                    <!--display food menu status = 1 -->
+                                    <% if(product[i].type == 'food' && product[i].status == 1){ %>
+                                        <tr>
+                                            <td><%= product[i].name %></td>
+                                            <td><%= new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 3 }).format(product[i].price) %></td>
+                                        </tr>
+                                    <% } %>
+                                    <!--display food menu status = 0 -->
+                                    <% if(product[i].type == 'food' && product[i].status == 0){ %>
+                                        <tr>
+                                            <td class="text-danger"><%= product[i].name %></td>
+                                            <td class="text-danger"><%= new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 3 }).format(product[i].price) %></td>
+                                        </tr>
+                                    <% } %>
+                                <% } %>
+                            <% } %>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="">
+                    <div class="container-fluid bg-warning">
+                        <i class="fa-solid fa-burger fs-3"></i>
+                        <span class="fs-3">ເມນູອາຫານ</span>
+                    </div>
+                    <br>
+                    <div class="container-fluid">
+                        <table style="width: 100%;color: gold;">
+                            <% if(product.length > 0){ %>
+                                <% for(let i=0; i < product.length; i++){ %>
+    
+                                    <!--display drink menu status = 1 -->
+                                    <% if(product[i].type == 'drinks' && product[i].status == 1){ %>
+                                        <tr>
+                                            <td><%= product[i].name %></td>
+                                            <td><%= new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 3 }).format(product[i].price) %></td>
+                                        </tr>
+                                    <% } %>
+                                    <!--display drinks menu status = 0 -->
+                                    <% if(product[i].type == 'drinks' && product[i].status == 0){ %>
+                                        <tr>
+                                            <td class="text-danger"><%= product[i].name %></td>
+                                            <td class="text-danger"><%= new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 3 }).format(product[i].price) %></td>
+                                        </tr>
+                                    <% } %>
+                                <% } %>
+                            <% } %>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
         <div class="text-center text-danger pb-1">
             <hr>
             <span>ຂອບໃຈລູກຄ້າທີ່ອຸດໜູນ</span><br>
@@ -115,7 +249,6 @@
             <span>soulixai.vls@gmail.com</span><br>
             <a  href="/adminMenu">link for admin</a>
         </div>
-        
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
